@@ -1,3 +1,3 @@
-## :watch: ReactJS Daily Planner
+## :santa: ReactJS Daily Planner. Blessed by Santa. 
 
 -- 
