@@ -2,16 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App' ;
-import MyForm from  './MyForm';
+import Form from  './Form';
 import reportWebVitals from './reportWebVitals';
 
-const form = MyForm;
 
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <form />
+    <Form />
   </React.StrictMode>,
   document.getElementById('root')
 );
