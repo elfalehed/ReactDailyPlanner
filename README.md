@@ -1,7 +1,7 @@
 ## :santa: ReactJS Daily Planner. Blessed by Santa. 
 
--- 
-Welcome Everyone,
+-- <br />
+Welcome Everyone, <br />
 I did on work some old projects with React but I didn't publish any of them (I will) <br />
 This is a New project (ReactDailyPlanner) A daily planner in your Browser.<br />
 
