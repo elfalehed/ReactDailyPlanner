@@ -1,31 +1,43 @@
-// Follow along. File issues in case of any bugs. 
-import React, {component} from 'react';
-import ReactDOM from 'react-dom';
-import './App.css';
-import Form from './Form';
+import React, { useState } from 'react'
+import cx from 'classnames'
+import useApp from './useApp'
+import ThemeControl from './ThemeControl'
+import AddFriend from './AddFriend'
+import UndoResetControl from './UndoResetControl'
+import Friends from './Friends'
+import './App.css'
 
-document.title = "ReactJS DailyP"
+const App = () => {
+  const { friends, theme, onSubmit, onThemeChange, undo, reset } = useApp()
 
-// a display function on hold
+  const [name, setName] = useState('')
+  const [gender, setGender] = useState('Male')
+  const onNameChange = (e) => setName(e.target.value)
+  const onGenderChange = (e) => setGender(e.target.value)
 
-/* 
-function App() {
-  //return null;
-  const hello = <h1 id="hellw"> Hello World, Welcome to ReactJS Daily Planner </h1> 
-  return hello;
- } 
- export default App;
-*/ 
+  const resetValues = () => {
+    setName('')
+    setGender('Male')
+  }
 
-export default class App extends component {
-	onSubmit = fields => {
-		console.log('The Form GOT:', fields )
-	}
-	render(){
-		return (
-				<div className="App">
-				<Form onSubmit={fields => this.onSubmit(fields)} />
-				</div>
-			);
- }
+  return (
+    <div
+      className={cx({
+        'theme-light': theme === 'light',
+        'theme-dark': theme === 'dark',
+      })}
+    >
+      <ThemeControl theme={theme} onChange={onThemeChange} />
+      <AddFriend
+        onSubmit={onSubmit({ name, gender }, resetValues)}
+        onNameChange={onNameChange}
+        onGenderChange={onGenderChange}
+        currentValues={{ name, gender }}
+      />
+      <UndoResetControl undo={undo} reset={reset} />
+      <Friends friends={friends} />
+    </div>
+  )
 }
+
+export default App

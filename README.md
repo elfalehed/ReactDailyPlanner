@@ -7,4 +7,12 @@ This is a New project (ReactDailyPlanner) A daily planner in your Browser.<br />
 
 
 
-There's a slow progress updating the code :ant: but I'll get it Done in no time. 
+There's a slow progress updating the code :ant: but I'll get it Done in no time. <br />
+
+<b>The Stack am using:</b><br/>
+
+* CSS/SCSS
+* JavaScript/TypeScript 
+* ReactJS
+* ClassNames feature
+ 
